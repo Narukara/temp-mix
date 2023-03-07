@@ -9,6 +9,7 @@
 #include <stdio.h>
 
 extern int rust_main(void);
+extern void mycomp_test();
 
 void app_main(void) {
     printf("Hello world from C!\n");
@@ -16,4 +17,7 @@ void app_main(void) {
     int result = rust_main();
 
     printf("Rust returned code: %d\n", result);
+
+    // Once this statement is uncommented, the error vanish
+    // mycomp_test();
 }

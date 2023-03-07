@@ -1,5 +1,9 @@
 use esp_idf_sys as _; // If using the `libstart` feature of `esp-idf-sys`, always keep this module imported
 
+extern "C" {
+    fn mycomp_test();
+}
+
 #[no_mangle]
 extern "C" fn rust_main() -> i32 {
     // Temporary. Will disappear once ESP-IDF 4.4 is released, but for now it is necessary to call this function once,
@@ -7,6 +11,8 @@ extern "C" fn rust_main() -> i32 {
     esp_idf_sys::link_patches();
 
     println!("Hello world from Rust!");
+
+    unsafe { mycomp_test(); }
 
     42
 }
