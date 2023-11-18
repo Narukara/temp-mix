@@ -1,6 +1,14 @@
 #![no_std]
+
+extern "C" {
+    fn mycomp_test();
+}
+
 #[no_mangle]
 extern "C" fn rust_main() -> i32 {
+    unsafe {
+        mycomp_test();
+    }
     42
 }
 

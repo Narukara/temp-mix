@@ -1,0 +1,1 @@
+void mycomp_test();
